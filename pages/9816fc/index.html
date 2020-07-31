@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vim 扩展 | Gocifer&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/img/favicon.ico">
+    <meta name="description" content="云原生技术博客，专注于计算机、网络、云计算相关技术的学习和总结。Linux，网络，运维，云计算，golang，云原生，网络安全等技术文章。">
+    <meta name="keywords" content="前端博客,个人技术博客,前端,前端开发,前端框架,web前端,前端面试题,技术文档,学习,面试,JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github,markdown">
+    <meta name="baidu-site-verification" content="7F55weZDDc">
+    <meta name="theme-color" content="#11a8cd">
+    <link rel="preload" href="/assets/css/0.styles.1ba410de.css" as="style"><link rel="preload" href="/assets/js/app.5bb0b44e.js" as="script"><link rel="preload" href="/assets/js/2.717babc4.js" as="script"><link rel="preload" href="/assets/js/63.8c76681d.js" as="script"><link rel="prefetch" href="/assets/js/10.3e114544.js"><link rel="prefetch" href="/assets/js/11.4161c730.js"><link rel="prefetch" href="/assets/js/12.e2b56866.js"><link rel="prefetch" href="/assets/js/13.26d11d5a.js"><link rel="prefetch" href="/assets/js/14.101242cd.js"><link rel="prefetch" href="/assets/js/15.aeeabc5e.js"><link rel="prefetch" href="/assets/js/16.501e71d2.js"><link rel="prefetch" href="/assets/js/17.25c53b09.js"><link rel="prefetch" href="/assets/js/18.76227f51.js"><link rel="prefetch" href="/assets/js/19.9d5c5e01.js"><link rel="prefetch" href="/assets/js/20.341b2b12.js"><link rel="prefetch" href="/assets/js/21.114174e0.js"><link rel="prefetch" href="/assets/js/22.c1e44e04.js"><link rel="prefetch" href="/assets/js/23.e7c42960.js"><link rel="prefetch" href="/assets/js/24.f1f7cdcf.js"><link rel="prefetch" href="/assets/js/25.5967fc32.js"><link rel="prefetch" href="/assets/js/26.41a226b5.js"><link rel="prefetch" href="/assets/js/27.bb0aa905.js"><link rel="prefetch" href="/assets/js/28.cfe8776c.js"><link rel="prefetch" href="/assets/js/29.cc05a8f8.js"><link rel="prefetch" href="/assets/js/3.cd13fc02.js"><link rel="prefetch" href="/assets/js/30.d5b46292.js"><link rel="prefetch" href="/assets/js/31.c027a203.js"><link rel="prefetch" href="/assets/js/32.442e6531.js"><link rel="prefetch" href="/assets/js/33.82b70710.js"><link rel="prefetch" href="/assets/js/34.b8848f81.js"><link rel="prefetch" href="/assets/js/35.bc60de53.js"><link rel="prefetch" href="/assets/js/36.1f2a2d01.js"><link rel="prefetch" href="/assets/js/37.fcb90e28.js"><link rel="prefetch" href="/assets/js/38.b14fdbcd.js"><link rel="prefetch" href="/assets/js/39.851097e7.js"><link rel="prefetch" href="/assets/js/4.be18f558.js"><link rel="prefetch" href="/assets/js/40.f527e03d.js"><link rel="prefetch" href="/assets/js/41.d76d2a9f.js"><link rel="prefetch" href="/assets/js/42.951864f6.js"><link rel="prefetch" href="/assets/js/43.4bf254e0.js"><link rel="prefetch" href="/assets/js/44.6fef7953.js"><link rel="prefetch" href="/assets/js/45.0adf5159.js"><link rel="prefetch" href="/assets/js/46.b40047ba.js"><link rel="prefetch" href="/assets/js/47.b089bd7c.js"><link rel="prefetch" href="/assets/js/48.d1436f7a.js"><link rel="prefetch" href="/assets/js/49.a174fba0.js"><link rel="prefetch" href="/assets/js/5.780ad7e3.js"><link rel="prefetch" href="/assets/js/50.18fc3240.js"><link rel="prefetch" href="/assets/js/51.76715a85.js"><link rel="prefetch" href="/assets/js/52.08f7eb24.js"><link rel="prefetch" href="/assets/js/53.e6230a91.js"><link rel="prefetch" href="/assets/js/54.f0cdd834.js"><link rel="prefetch" href="/assets/js/55.c24858ef.js"><link rel="prefetch" href="/assets/js/56.ee51e524.js"><link rel="prefetch" href="/assets/js/57.dd385ae8.js"><link rel="prefetch" href="/assets/js/58.9ad6ea89.js"><link rel="prefetch" href="/assets/js/59.c08ecfda.js"><link rel="prefetch" href="/assets/js/6.cee5b248.js"><link rel="prefetch" href="/assets/js/60.75e0eee8.js"><link rel="prefetch" href="/assets/js/61.3a226ab8.js"><link rel="prefetch" href="/assets/js/62.01a2bf4b.js"><link rel="prefetch" href="/assets/js/64.db33256b.js"><link rel="prefetch" href="/assets/js/65.2e1ebaab.js"><link rel="prefetch" href="/assets/js/66.e094042d.js"><link rel="prefetch" href="/assets/js/67.dbaea1c1.js"><link rel="prefetch" href="/assets/js/68.e235e7aa.js"><link rel="prefetch" href="/assets/js/69.4172339e.js"><link rel="prefetch" href="/assets/js/7.6e9c4628.js"><link rel="prefetch" href="/assets/js/70.b7584039.js"><link rel="prefetch" href="/assets/js/71.f49e21cb.js"><link rel="prefetch" href="/assets/js/72.968c2e04.js"><link rel="prefetch" href="/assets/js/73.72c69fef.js"><link rel="prefetch" href="/assets/js/74.f1f00f31.js"><link rel="prefetch" href="/assets/js/75.849d225f.js"><link rel="prefetch" href="/assets/js/76.cf2cfd7f.js"><link rel="prefetch" href="/assets/js/77.927cbb1b.js"><link rel="prefetch" href="/assets/js/78.0e032591.js"><link rel="prefetch" href="/assets/js/79.30db201e.js"><link rel="prefetch" href="/assets/js/8.f6bc7e45.js"><link rel="prefetch" href="/assets/js/80.9c3e2106.js"><link rel="prefetch" href="/assets/js/81.b5a3857b.js"><link rel="prefetch" href="/assets/js/9.803a3433.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1ba410de.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/GL1.png" alt="Gocifer's blog" class="logo"> <span class="site-name can-hide">Gocifer's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🐧  Linux 学习" class="dropdown-title"><a href="/Linux/" class="link-title">🐧  Linux 学习</a> <span class="title" style="display:none;">🐧  Linux 学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Linux 基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/9816fc/.html" class="nav-link">常用命令</a></li><li class="dropdown-subitem"><a href="/pages/9816fc/.html" class="nav-link">基础原理</a></li><li class="dropdown-subitem"><a href="/pages/9816fc/.html" class="nav-link">基础服务</a></li><li class="dropdown-subitem"><a href="/pages/9816fc/.html" class="nav-link">疑难杂症</a></li></ul></li><li class="dropdown-item"><h4>Linux 提高</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/LinuxAdvanced/" class="nav-link">《GTech：Linux&amp;Unix 运维》</a></li><li class="dropdown-subitem"><a href="/note/es6/" class="nav-link">《GTech：Linux&amp;Unix 编程》</a></li><li class="dropdown-subitem"><a href="/note/es6/" class="nav-link">《GTech：Linux&amp;Unix 进阶》</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🕸️  网络·计算·安全" class="dropdown-title"><a href="/Linux/" class="link-title">🕸️  网络·计算·安全</a> <span class="title" style="display:none;">🕸️  网络·计算·安全</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/LinuxAdvanced/" class="nav-link">《GTech：交换与路由》</a></li><li class="dropdown-item"><!----> <a href="/note/es6/" class="nav-link">《GTech：网络安全》</a></li><li class="dropdown-item"><!----> <a href="/note/es6/" class="nav-link">《GTech：物联网》</a></li><li class="dropdown-item"><!----> <a href="/note/es6/" class="nav-link">《GTech：云计算》</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🌩️  云原生" class="dropdown-title"><a href="/Linux/" class="link-title">🌩️  云原生</a> <span class="title" style="display:none;">🌩️  云原生</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/LinuxAdvanced/" class="nav-link">《GCNCF：CNCF Conf 会议摘录》</a></li><li class="dropdown-item"><!----> <a href="/note/es6/" class="nav-link">《GCNCF：Serverless》 </a></li><li class="dropdown-item"><!----> <a href="/note/es6/" class="nav-link">《GCNCF：Service Mesh》 </a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🗒  开发笔记" class="dropdown-title"><a href="/ui/" class="link-title">🗒  开发笔记</a> <span class="title" style="display:none;">🗒  开发笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/8309a5b876fc95e3/" class="nav-link">后端</a></li><li class="dropdown-item"><!----> <a href="/pages/0a83b083bdf257cb/" class="nav-link">Angular</a></li><li class="dropdown-item"><!----> <a href="/pages/0a83b083bdf257cb/" class="nav-link">Flutter</a></li><li class="dropdown-item"><!----> <a href="/pages/0a83b083bdf257cb/" class="nav-link">数据结构与算法</a></li><li class="dropdown-item"><!----> <a href="/pages/0a83b083bdf257cb/" class="nav-link">Golang 集萃</a></li><li class="dropdown-item"><!----> <a href="/pages/0a83b083bdf257cb/" class="nav-link">其他</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🔪  项目与实践" class="dropdown-title"><a href="/technology/" class="link-title">🔪  项目与实践</a> <span class="title" style="display:none;">🔪  项目与实践</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/9a7ee40fc232253e/" class="nav-link">技术文档</a></li><li class="dropdown-item"><!----> <a href="/pages/4c778760be26d8b3/" class="nav-link">GitHub技巧</a></li><li class="dropdown-item"><!----> <a href="/pages/117708e0af7f0bd9/" class="nav-link">Nodejs</a></li><li class="dropdown-item"><!----> <a href="/pages/41f87d890d0a02af/" class="nav-link">博客搭建</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="💡  杂文" class="dropdown-title"><a href="/more/" class="link-title">💡  杂文</a> <span class="title" style="display:none;">💡  杂文</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/f2a556/" class="nav-link">学习</a></li><li class="dropdown-item"><!----> <a href="/pages/aea6571b7a8bae86/" class="nav-link">面试</a></li><li class="dropdown-item"><!----> <a href="/pages/2d615df9a36a98ed/" class="nav-link">心情杂货</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="⭐  收藏" class="dropdown-title"><a href="/pages/beb6c0bd8a66cea6/" class="link-title">⭐  收藏</a> <span class="title" style="display:none;">⭐  收藏</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>工具</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/8143cc480faf9a11/" class="nav-link">0</a></li><li class="dropdown-subitem"><a href="/pages/802a1ca6f7b71c59/" class="nav-link">软件/插件安利</a></li></ul></li><li class="dropdown-item"><h4>资源</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/beb6c0bd8a66cea6/" class="nav-link">Linux</a></li><li class="dropdown-subitem"><a href="/pages/eee83a9211a70f9d/" class="nav-link">云原生</a></li><li class="dropdown-subitem"><a href="/pages/12df8ace52d493f6/" class="nav-link">前端/客户端</a></li><li class="dropdown-subitem"><a href="/pages/12df8ace52d493f6/" class="nav-link">服务端</a></li><li class="dropdown-subitem"><a href="/pages/12df8ace52d493f6/" class="nav-link">计算机基础知识</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="📇  索引" class="dropdown-title"><a href="/archives/" class="link-title">📇  索引</a> <span class="title" style="display:none;">📇  索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🏳️‍🌈  关于" class="dropdown-title"><a href="/about/" class="link-title">🏳️‍🌈  关于</a> <span class="title" style="display:none;">🏳️‍🌈  关于</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/f2a556/" class="nav-link">个人简历</a></li><li class="dropdown-item"><!----> <a href="/friends/" class="nav-link">项目经历</a></li><li class="dropdown-item"><!----> <a href="/friends/" class="nav-link">友情链接</a></li></ul></div></div> <a href="https://github.com/gocifer/GLog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200103123203.jpg"> <div class="blogger-info"><h3>Gocifer</h3> <span>
+        云原生菜鸟
+      </span></div></div> <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🐧  Linux 学习" class="dropdown-title"><a href="/Linux/" class="link-title">🐧  Linux 学习</a> <span class="title" style="display:none;">🐧  Linux 学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Linux 基础</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/9816fc/.html" class="nav-link">常用命令</a></li><li class="dropdown-subitem"><a href="/pages/9816fc/.html" class="nav-link">基础原理</a></li><li class="dropdown-subitem"><a href="/pages/9816fc/.html" class="nav-link">基础服务</a></li><li class="dropdown-subitem"><a href="/pages/9816fc/.html" class="nav-link">疑难杂症</a></li></ul></li><li class="dropdown-item"><h4>Linux 提高</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/LinuxAdvanced/" class="nav-link">《GTech：Linux&amp;Unix 运维》</a></li><li class="dropdown-subitem"><a href="/note/es6/" class="nav-link">《GTech：Linux&amp;Unix 编程》</a></li><li class="dropdown-subitem"><a href="/note/es6/" class="nav-link">《GTech：Linux&amp;Unix 进阶》</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🕸️  网络·计算·安全" class="dropdown-title"><a href="/Linux/" class="link-title">🕸️  网络·计算·安全</a> <span class="title" style="display:none;">🕸️  网络·计算·安全</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/LinuxAdvanced/" class="nav-link">《GTech：交换与路由》</a></li><li class="dropdown-item"><!----> <a href="/note/es6/" class="nav-link">《GTech：网络安全》</a></li><li class="dropdown-item"><!----> <a href="/note/es6/" class="nav-link">《GTech：物联网》</a></li><li class="dropdown-item"><!----> <a href="/note/es6/" class="nav-link">《GTech：云计算》</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🌩️  云原生" class="dropdown-title"><a href="/Linux/" class="link-title">🌩️  云原生</a> <span class="title" style="display:none;">🌩️  云原生</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/LinuxAdvanced/" class="nav-link">《GCNCF：CNCF Conf 会议摘录》</a></li><li class="dropdown-item"><!----> <a href="/note/es6/" class="nav-link">《GCNCF：Serverless》 </a></li><li class="dropdown-item"><!----> <a href="/note/es6/" class="nav-link">《GCNCF：Service Mesh》 </a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🗒  开发笔记" class="dropdown-title"><a href="/ui/" class="link-title">🗒  开发笔记</a> <span class="title" style="display:none;">🗒  开发笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/8309a5b876fc95e3/" class="nav-link">后端</a></li><li class="dropdown-item"><!----> <a href="/pages/0a83b083bdf257cb/" class="nav-link">Angular</a></li><li class="dropdown-item"><!----> <a href="/pages/0a83b083bdf257cb/" class="nav-link">Flutter</a></li><li class="dropdown-item"><!----> <a href="/pages/0a83b083bdf257cb/" class="nav-link">数据结构与算法</a></li><li class="dropdown-item"><!----> <a href="/pages/0a83b083bdf257cb/" class="nav-link">Golang 集萃</a></li><li class="dropdown-item"><!----> <a href="/pages/0a83b083bdf257cb/" class="nav-link">其他</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🔪  项目与实践" class="dropdown-title"><a href="/technology/" class="link-title">🔪  项目与实践</a> <span class="title" style="display:none;">🔪  项目与实践</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/9a7ee40fc232253e/" class="nav-link">技术文档</a></li><li class="dropdown-item"><!----> <a href="/pages/4c778760be26d8b3/" class="nav-link">GitHub技巧</a></li><li class="dropdown-item"><!----> <a href="/pages/117708e0af7f0bd9/" class="nav-link">Nodejs</a></li><li class="dropdown-item"><!----> <a href="/pages/41f87d890d0a02af/" class="nav-link">博客搭建</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="💡  杂文" class="dropdown-title"><a href="/more/" class="link-title">💡  杂文</a> <span class="title" style="display:none;">💡  杂文</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/f2a556/" class="nav-link">学习</a></li><li class="dropdown-item"><!----> <a href="/pages/aea6571b7a8bae86/" class="nav-link">面试</a></li><li class="dropdown-item"><!----> <a href="/pages/2d615df9a36a98ed/" class="nav-link">心情杂货</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="⭐  收藏" class="dropdown-title"><a href="/pages/beb6c0bd8a66cea6/" class="link-title">⭐  收藏</a> <span class="title" style="display:none;">⭐  收藏</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>工具</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/8143cc480faf9a11/" class="nav-link">0</a></li><li class="dropdown-subitem"><a href="/pages/802a1ca6f7b71c59/" class="nav-link">软件/插件安利</a></li></ul></li><li class="dropdown-item"><h4>资源</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/beb6c0bd8a66cea6/" class="nav-link">Linux</a></li><li class="dropdown-subitem"><a href="/pages/eee83a9211a70f9d/" class="nav-link">云原生</a></li><li class="dropdown-subitem"><a href="/pages/12df8ace52d493f6/" class="nav-link">前端/客户端</a></li><li class="dropdown-subitem"><a href="/pages/12df8ace52d493f6/" class="nav-link">服务端</a></li><li class="dropdown-subitem"><a href="/pages/12df8ace52d493f6/" class="nav-link">计算机基础知识</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="📇  索引" class="dropdown-title"><a href="/archives/" class="link-title">📇  索引</a> <span class="title" style="display:none;">📇  索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="🏳️‍🌈  关于" class="dropdown-title"><a href="/about/" class="link-title">🏳️‍🌈  关于</a> <span class="title" style="display:none;">🏳️‍🌈  关于</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/f2a556/" class="nav-link">个人简历</a></li><li class="dropdown-item"><!----> <a href="/friends/" class="nav-link">项目经历</a></li><li class="dropdown-item"><!----> <a href="/friends/" class="nav-link">友情链接</a></li></ul></div></div> <a href="https://github.com/gocifer/GLog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>序言</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/9b58a3/" class="sidebar-link">index</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Linux 基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Linux 网络管理</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Shell 编程</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>操作系统杂谈</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>虚拟化</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>内核初探</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Linux GUI</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Linux FAQ</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <div><main class="page"> <div class="theme-vdoing-wrapper"><div class="articleInfo-wrap" data-v-14888ed5><div class="articleInfo" data-v-14888ed5><ul class="breadcrumbs" data-v-14888ed5><li data-v-14888ed5><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-14888ed5></a></li> <li data-v-14888ed5><a href="/categories/?category=GTech%EF%BC%9ALinux%E5%9F%BA%E7%A1%80" title="分类" data-v-14888ed5>GTech：Linux基础</a></li> <li data-v-14888ed5><a href="/categories/?category=Linux%20FAQ" title="分类" data-v-14888ed5>Linux FAQ</a></li></ul> <div class="info" data-v-14888ed5><div title="作者" class="author iconfont icon-touxiang" data-v-14888ed5><a href="https://github.com/gocifer" target="_blank" title="作者" class="beLink" data-v-14888ed5>Gocifer</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-14888ed5><a href="javascript:;" data-v-14888ed5>2020-07-30</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABH1JREFUSA3tVl1oHFUUPmdmd2ltklqbpJDiNnXFmgbFktho7YMPNiJSSZM0+CAYSkUELVhM6YuwIPpgoOKDqOBDC0XE2CQoNtQXBUFTTcCi+Wlh1V2TQExsUzcltd3M9Tt3ZjZzZ2fT+OJTL8yeM+eee757fmeJbq//KQL8X3DUSFOcfr7cRsRtxNQMWueeVzOkaITIGqQHNg5y8+jNW9ldM7A6nTpAjuolUikAwq7CE3WcM2RRDz+XGVgN3FptU/aUSlvq9Pa3iZ1+sgAqJyyAFqkipd9dqiwHF3P65YycLWc/6sqGrvoEoIp6DOFaX5h6+dnfjkWprwqsPk0dUGq5vySwDImC10KxFHgGL1SWoc92O3eVht09qdXNH11I2SsTsJYqMWzihqGMi+A+Garf3BAuuLI5oGlULyNfyB/HYNujwktOfRrMr5t77NmevqaUopx0grnKAyvVpmwUDB4x6FPXuGvYLTDwWsejwgtgkYKPqRJg8SV6xaiZ3ZTppGneS4yfH5/66fZSDHv+QZci/+h5c5UHtpy67JUqGppM0sh0Nc1dW6/N1W5Yoqat8/TU/VnadmdeW2PLLSyh0cvxBs3KbqTmwYPpxN4do/mzE8nEpvX/UMu2Wbp74zUAK5q6WkHns7V0eWkdPbPzd3rxkTGybadYySumVzhcaJFbs5UrEkQ/+CK8gF5dnh/6ciIZ73gwQ927L1IitoxKLXYP3SjYdOrHHfTZhRRlFyrorafPk20B3HPD1y2G3qKZME5Jcf3t/HUC13/8tSd++vqFveMUTwAUxSUFI1QekR1+bIze3D9MF2aq6cPvG72CgnldWCFqyRw3lwH8ZMerjTD9ElRO7Gv44wNpC90aASqGfVlz/Rx17srQ57/UU26hkhQqUB7dBR71WmzQhHUnblGmVOEw0jhbV1n9OlXUDCIRGaNV5Jp43N516fN7JmnTHdfp7Hgy0luO4aMhtkLL8Bi3bUWYvzh5Mn1dTxrL6QmGuRhGL/TiTTxRoEdTszSaq9GR0NGA3KdkOz3hqSV3MIDhQ5IVX/Ivx3umBti2es2h4eZby7x8br1rkf7Mo90AqC8aQ3sJeNzqFRu+vSANAQe3PL7l0HGOAdwDCeZYvNKeoZp1Qfs6Aipndh86HmFRi0LAnEO47wsqM6cdfjh3jBPUzhZy7nvlUfFsamED1VQt6aISHVymXZ/B2aCtIG8AI8xfobj2d3en1wWVhOeHELKmLQ1s211s88comkv4UCwWyF787mJdYXtNfhKAXVqnKTq8QZvGAGGOfaTo5pGZ/PwbUCr5+DPr/1J92JNHr9aOl/F3iI5+O1nfybsGxoimvZ3ViWSluDITw3P37mypheDIPY0tw7+O/5ApbkYw+zpfaUVu32Pi98+defdUhEpZkRFq0aqyNh9FuL9hpYbEm6iwi0z2REd09ZmyENEbuhjDWzKvZXTqKYaBIr3tt5kuPtQBZFvEUwHt60vfCNu41XsksH9Ij1BMMz1Y0OOunHNShFIP5868g5zeXmuLwL9T4b6Q2+KejgAAAABJRU5ErkJggg==">
+          vim 扩展
+        </h1> <div class="theme-vdoing-content content__default"><h1 id="vim-扩展"><a href="#vim-扩展" class="header-anchor">#</a> vim 扩展</h1> <p>[toc]</p> <h1 id="git"><a href="#git" class="header-anchor">#</a> git</h1> <blockquote><p>https://gitee.com/blinderjay/firstblood</p></blockquote> <p>git add 文件名 //添加一个文件到git index
+git commit -m “代码提交信息” //提交
+git push -u origin master //上传到远程
+ls //查看当前目录
+git status //查看状态</p> <h1 id="linux下安装git"><a href="#linux下安装git" class="header-anchor">#</a> Linux下安装Git</h1> <h2 id="_1-安装git"><a href="#_1-安装git" class="header-anchor">#</a> 1. 安装Git</h2> <p>1.1 Ubuntu12.04下
+可以使用apt-get方式安装，也可以下载源代码安装【1】，我们这里使用apt-git安装。</p> <p>但由于直接使用 sudo apt-get install git 安装的版本较老，因此我们参考【2】中给出的PPA源。</p> <p>sudo add-apt-repository ppa:git-core/ppa
+sudo apt-get update
+sudo apt-get install git
+安装完成后，检查是否安装成功</p> <p>git --version
+显示 git version 2.1.1，表明安装成功。</p> <p>1.2 CentOS6.6下
+在CentOS5的时代，由于yum源中没有git，所以需要预先安装一系列的依赖包。但在CentOS6的yum源中已经有git的版本了，可以直接使用yum源进行安装。</p> <p>$ sudo yum install git
+但是yum源中安装的git版本是1.7.1，太老了，Github等需要的Git版本最低都不能低于1.7.2 。所以我们一般不用上面的方法。而是下载git源码，编译安装。</p> <p>编译安装的步骤是【4】：</p> <p>（1）首先先更新系统</p> <p>sudo yum update
+（2）安装依赖的包</p> <p>sudo yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker
+（3）下载git源码并解压缩</p> <p>$ wget https://github.com/git/git/archive/v2.3.0.zip
+$ unzip v2.3.0.zip
+$ cd git-2.3.0
+（4）编译安装</p> <p>将其安装在“/usr/local/git”目录下。</p> <p>make prefix=/usr/local/git all
+sudo make prefix=/usr/local/git install
+（5）此时你如果使用git --version 查看git版本的话，发现git仍然是1.7.1版本。这是因为它默认使用了&quot;/usr/bin&quot;下的git。</p> <p>你可以用下面的命令查看git所在的路径：</p> <p>$ whereis git
+git: /usr/bin/git /usr/local/git /usr/share/man/man1/git.1.gz
+（6）我们要把编译安装的git路径放到环境变量里，让它替换&quot;/usr/bin&quot;下的git。为此我们可以修改“/etc/profile”文件（或者/etc/bashrc文件）。</p> <p>sudo vim /etc/profile
+然后在文件的最后一行，添加下面的内容，然后保存退出。</p> <p>export PATH=/usr/local/git/bin:$PATH
+（7）使用source命令应用修改。</p> <p>source /etc/profile
+（8）然后再次使用git --version 查看git版本，发现输出2.3.0，表明安装成功。</p> <h2 id="_2-设置git"><a href="#_2-设置git" class="header-anchor">#</a> 2. 设置Git</h2> <p>（1）设置用户名和email。</p> <p>git config --global user.name &quot;Your Name&quot;
+git config --global user.email &quot;youremail@domain.com&quot;
+此时，Home目录下会新建一个.gitconfig文件</p> <h2 id="_3-为github账号添加ssh-keys"><a href="#_3-为github账号添加ssh-keys" class="header-anchor">#</a> 3. 为GitHub账号添加SSH Keys</h2> <p>以公钥认证方式访问SSH协议的Git服务器时无需输入口令，而且更安全。（访问HTTP协议的Git服务器时，比如提交修改，每次都需要输入口令。）</p> <p>（1）创建SSH key</p> <p>$ ssh-keygen -t rsa -C &quot;youremail@163.com&quot;
+系统会提示key的保存位置（一般是~/.ssh目录）和指定口令，保持默认，连续三次回车即可。</p> <p>（2）Copy SSH Key</p> <p>然后用vim打开该文件，id_rsa.pub文件内的内容，粘帖到github帐号管理的添加SSH key界面中。</p> <p>vim ~/.ssh/id_rsa.pub
+（3）添加到GitHub</p> <p>登录github-&gt; Accounting settings图标-&gt; SSH key-&gt; Add SSH key-&gt; 填写SSH key的名称（可以起一个自己容易区分的），然后将拷贝的~/.ssh/id_rsa.pub文件内容粘帖-&gt; add key”按钮添加。</p> <p>（4）测试</p> <p>ssh -T git@github.com</p> <h2 id="_4-为github上的repository提交修改"><a href="#_4-为github上的repository提交修改" class="header-anchor">#</a> 4. 为GitHub上的Repository提交修改</h2> <p>（1）git clone已存在GitHub上的Repository。（在新建的~/MyTestFolder目录中）</p> <p>git clone https://github.com/zhchnchn/ZhchnchnTest.git
+（2）修改一个文件，然后提交</p> <p>vim README.md
+git status
+git add README.md
+git status
+git commit -m &quot;Edit by WorkUbuntu 1204&quot;
+git status
+git remote add origin https://github.com/zhchnchn/ZhchnchnTest.git
+这时会报错误：</p> <p>fatal: remote origin already exists.</p> <p>解决办法【3】：</p> <p>$ git remote rm origin
+然后再次执行 git remote add origin https://github.com/zhchnchn/ZhchnchnTest.git</p> <p>（3）之后，需要将修改push到GitHub上</p> <p>git push -u origin master
+执行该条命令后，会要求输入GitHub账户的用户名和密码。</p> <p>（4）提交完成后，查看GitHub上的Repository，会发现内容修改成功。</p> <h1 id="pluginmanager-list"><a href="#pluginmanager-list" class="header-anchor">#</a> PluginManager[^list]</h1> <h2 id="vundle"><a href="#vundle" class="header-anchor">#</a> vundle</h2> <p>Vundle可以通过一个命令安装所有的插件，一个命令给所有的插件升级。而要安装的插件则都写在vim的配置文件里，所以看起来一目了然，更方便管理。Vundle的官方README里面有详细的安装指南，这里简单介绍一下配置过程。</p> <p>首先自然是先去项目主页下载好插件。放到.vim/bundle目录中。可以使用以下命令安装：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>然后在自己的配置文件里面加上下面的语句，启用Vundle：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>set nocompatible &quot; be iMproved
+filetype off &quot; required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>接下来就能在配置文件中指定安装哪些插件了，Vundle支持三种格式，具体见下面的配置：
+&quot; 使用Vundle来管理Vundle，这个必须要有。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Bundle 'gmarik/vundle'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>&quot;接下来是要安装的插件</p> <p>&quot;格式1：Github上其他用户的仓库（非vim-scripts账户里的仓库，所以要加Github用户名）</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails.git'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>&quot;格式2：vim-scripts里面的仓库，直接打仓库名即可。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Bundle 'L9'
+Bundle 'FuzzyFinder'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>&quot;格式3：非Github的Git仓库</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>最后在所有Bundle命令后面加上文件类型检测：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>filetype plugin indent on
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>大功告成，在vim里面输入<code>:BundleInstall</code>命令后Vundle就会自动帮你把所有的插件装好。而:BundleInstall!命令则会自动升级所有插件。或者直接在终端输入<code>vim +BundleInstall +qall</code></p> <p>你也可以使用Vundle手动管理插件，例如我写了一个mytemplates插件，并放到了.vim/myplugin目录中，那么可以在vim的配置文件中加入下面的命令：
+set rtp+=~/.vim/myplugin/mytemplates/这样Vunlde就会自动去myplugin目录中载入mytempaltes插件。</p> <p>现在，我可以用.vimrc来管理所有的插件了。😃</p> <p>备注：Vundle的其他操作
+更新插件:BundleUpdate
+清除不再使用的插件:BundleClean（就是删除Vundle目录中的插件，但是.vimrc中没有添加配置的插件）
+列出所有插件:BundleList
+查找插件:BundleSearch</p> <h3 id="出错提示"><a href="#出错提示" class="header-anchor">#</a> 出错提示</h3> <p>如果在安装完插件后启动 vim 出现如下提示，则说明你的 vim 需要升级。
+<code>YouCompleteMe unavailable: requires Vim 7.4.1578+.</code></p> <p>如果在安装完插件后启动 vim 出现如下提示，则说明你的 vim 需要重新编译以支持 Python。
+<code>YouCompleteMe unavailable: requires Vim compiled with Python (2.6+ or 3.3+) support</code></p> <h2 id="pathogen"><a href="#pathogen" class="header-anchor">#</a> pathogen</h2> <h3 id="一、pathogen简介"><a href="#一、pathogen简介" class="header-anchor">#</a> 一、pathogen简介</h3> <p>通常情况下安装vim插件，通常是将所有的插件和相关的doc文件都安装在中一文件夹中，如将插件全部安装在/usr/share/vim/vim73/plugin/目录下，将帮助文档全部安装在/usr/share/vim/vim73/doc/目录下。这样做带来的后果是修改和卸载插件很麻烦，很难弄清楚哪个文件属于哪个插件。</p> <p>如果用pathogen来管理插件的话，就会变得方便很多了。pathogen让每个插件占有一个单独的目录，解决了文件分散的问题。安装完pathogen之后，只需要在~/.vim/目录下新建一个目录~/.vim/bundle/，并将要安装的所有插件放在~/.vim/bundle/目录下即可以使用。如果要删除某个插件，只需要将~/.vim/bundle/目录下对应的插件目录删除即可。如果想保持某个插件为最新版本，直接从插件的仓库checkout一份代码到bundle目录即可。</p> <h3 id="二、安装pathogen"><a href="#二、安装pathogen" class="header-anchor">#</a> 二、安装pathogen</h3> <ol><li>准备工作
+创建.vim目录，以及其下的autoload和bundle目录。（如果先前已有.vim目录，可以先备份一下）</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ mkdir ~/.vim/
+$ mkdir ~/.vim/{autoload,bundle}
+$ cd ~/.vim/
+$ git init
+如果Ubuntu中没有安装Git,需要首先安装Git。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ol start="2"><li>安装pathogen</li></ol> <blockquote><p>referred from:https://www.cnblogs.com/zhcncn/p/4030576.html</p></blockquote> <p>下载<a href="https://github.com/tpope/vim-pathogen" target="_blank" rel="noopener noreferrer">vim-pathogen<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，将zip包中autoload下的pathogen.vim文件copy到 ~/.vim/autoload文件夹下。</p> <p>###三、启用pathogen
+然后添加下面的命令到~/.vimrc文件中（.vimrc文件不存在的话，先创建.vimrc文件）。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>call pathogen#infect()
+call pathogen#helptags()
+nnoremap &lt;leader&gt;v &lt;Plug&gt;TaskList
+syntax on
+filetype plugin indent on
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>注：这里需要说明一下，该插件不能放到/usr/share/vim/vim73/目录下，而只能放到~/.vim/目录下。要启用pathogen也只能修改~/.vimrc，而不能修改/etc/vimrc (Ubuntu下一般只需要修改~/.vimrc即可。如果使用Fedora，当以root用户打开vim时，如果要使插件或对VIM的配置生效，则需要修改/etc/vimrc文件)。</p> <p>很多插件还带有自己的说明文档（doc目录中），只要执行一下命令vim输入<code>:call pathogen#helptags()</code>即可。
+pathogen就可以自动为bundle目录下所有的doc目录中的txt文件生成帮助文档标签。</p> <h3 id="四、安装新插件"><a href="#四、安装新插件" class="header-anchor">#</a> 四、安装新插件</h3> <p>到目前为止，pathogen已经启用，要安装新插件，只需要下载该插件，并将其放到~/.vim/bundle/目录下即可。</p> <p>1、安装NERDTree</p> <p>例如，要下载安装NERDTree插件，只需要进入到~/.vim/bundle/目录，然后执行以下命令：
+<code>git clone http://github.com/scrooloose/nerdtree.git</code></p> <p>下载完成后，会看到~/.vim/bundle/目录下会多出一个新的目录：nerdtree</p> <p>OK！NERDTree插件已经安装完成了！可以看到这种方式比传统的vim插件安装方式简单多了！
+而要卸载该插件也非常简单，只需要在~/.vim/bundle/目录下删除nerdtree目录即可，干净利落！</p> <p>要更新该插件到最新版本，只需要进入到该目录~/.vim/bundle/nerdtree/，并执行以下命令：
+<code>git pull origin</code>
+当然这种安装和更新插件的方法只适用于代码仓库支持git的方法。
+对于无法用git下载的插件，就更新bundle里的那个以插件名为名的目录就好。</p> <p>2、安装tagbar
+tagbar可以做为taglist的替代者，在~/.vim/bundle/目录执行安装命令如下：
+<code>git clone https://github.com/majutsushi/tagbar.git</code></p> <p>之后同样可以在vimrc文件中设置快捷键：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>nmap &lt;F4&gt; :TagbarToggle&lt;CR&gt;   &quot;设置快捷键  
+let g:tagbar_width = 40       &quot;设置宽度，默认为40  
+autocmd VimEnter * nested :call tagbar#autoopen(1)    &quot;打开vim时自动打开  
+tagbarlet g:tagbar_left = 1         &quot;在左侧&quot;  
+let g:tagbar_right = 1        &quot;在右侧  
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>列举几点比taglist优化了的地方：
+(1)支持头文件的函数列表显示
+tagbar对函数的可见级别也是做了区分的，分别用+ - # 并配合着色来做了区分。
+(2)对面向对象的支持更好
+taglist虽然也会列出类列表，但是整体还是很不直观。
+(3)自动根据文件修改时间来重建
+taglist在这一点上体验就很不好，其实明明可以通过这种时间戳的方式来实现。
+（据说tagbar最好配置ctags使用，效果会更好）</p> <h3 id="五、c-vim-与-pathogen-vim-的兼容问题"><a href="#五、c-vim-与-pathogen-vim-的兼容问题" class="header-anchor">#</a> 五、c.vim 与 pathogen.vim 的兼容问题</h3> <p>pathogen与大部分插件都很兼容，但有少部分插件在使用pathogen管理时会出现问题。例如，C&amp;C++程序员用得非常多的插件c.vim（C/C++ IDE -- Write and run programs. Insert statements, idioms, comments etc）。当将此插件安装到bundle/cvim/目录下后，打开Vim，会弹出&quot;Global template file '.s:C_GlobalTemplateFile.' not readable.&quot;的警告。要解决这个问题，只需要将此插件的c.vim文件（在plugin目录下）的69行：
+let s:plugin_dir   = $VIM.'/vimfiles/'
+修改为：
+let s:plugin_dir   = $VIM.'/vimfiles/bundle/cvim/'
+即可。</p> <h3 id="六、pathogen-vim-与-vimball"><a href="#六、pathogen-vim-与-vimball" class="header-anchor">#</a> 六、pathogen.vim 与 vimball</h3> <p>有些插件是以vimball的方式发布的（打包成.vba格式），如果按照常规的安装方式，即用Vim打开vba文件，然后执行命令：
+:so %
+那么，插件的文件还是被解压到vimfiles目录下，而非bundle目录。当然，我们可以用
+:RmVimball pluginname
+命令来卸载vba格式的插件。
+然而，如果我们仍然想用pathogen来管理vba格式的插件，那么可以依照以下步骤操作：
+:edit name.vba
+:!mkdir $VIM\vimfiles\bundle\name
+:UseVimball <mjx-container jax="CHTML" class="MathJax"><mjx-math class=" MJX-TEX"><mjx-mi class="mjx-i"><mjx-c c="V"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c c="I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c c="M"></mjx-c></mjx-mi><mjx-mtext class="mjx-n" style="color:red;"><mjx-c c="5C"></mjx-c><mjx-c c="v"></mjx-c><mjx-c c="i"></mjx-c><mjx-c c="m"></mjx-c><mjx-c c="f"></mjx-c><mjx-c c="i"></mjx-c><mjx-c c="l"></mjx-c><mjx-c c="e"></mjx-c><mjx-c c="s"></mjx-c></mjx-mtext><mjx-mtext class="mjx-n" style="color:red;"><mjx-c c="5C"></mjx-c><mjx-c c="b"></mjx-c><mjx-c c="u"></mjx-c><mjx-c c="n"></mjx-c><mjx-c c="d"></mjx-c><mjx-c c="l"></mjx-c><mjx-c c="e"></mjx-c></mjx-mtext><mjx-mtext class="mjx-n" style="color:red;"><mjx-c c="5C"></mjx-c><mjx-c c="n"></mjx-c><mjx-c c="a"></mjx-c><mjx-c c="m"></mjx-c><mjx-c c="e"></mjx-c></mjx-mtext><mjx-mo space="4" class="mjx-n"><mjx-utext variant="normal" style="font-family:serif;">这</mjx-utext><mjx-utext variant="normal" style="font-family:serif;">样</mjx-utext><mjx-utext variant="normal" style="font-family:serif;">，</mjx-utext></mjx-mo><mjx-mi space="4" class="mjx-i"><mjx-c c="n"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c c="a"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c c="m"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c c="e"></mjx-c></mjx-mi><mjx-mo space="4" class="mjx-n"><mjx-utext variant="normal" style="font-family:serif;">插</mjx-utext><mjx-utext variant="normal" style="font-family:serif;">件</mjx-utext><mjx-utext variant="normal" style="font-family:serif;">的</mjx-utext><mjx-utext variant="normal" style="font-family:serif;">文</mjx-utext><mjx-utext variant="normal" style="font-family:serif;">件</mjx-utext><mjx-utext variant="normal" style="font-family:serif;">就</mjx-utext><mjx-utext variant="normal" style="font-family:serif;">都</mjx-utext><mjx-utext variant="normal" style="font-family:serif;">被</mjx-utext><mjx-utext variant="normal" style="font-family:serif;">解</mjx-utext><mjx-utext variant="normal" style="font-family:serif;">压</mjx-utext><mjx-utext variant="normal" style="font-family:serif;">到</mjx-utext></mjx-mo></mjx-math></mjx-container>VIM\vimfiles\bundle\name 目录下，且自动
+执行了helptags命令。</p> <h1 id="java-ide-list"><a href="#java-ide-list" class="header-anchor">#</a> Java IDE[^list]</h1> <h2 id="目录树的创建"><a href="#目录树的创建" class="header-anchor">#</a> 目录树的创建</h2> <p>开发的时候</p> <ul><li>首先建立 Troy(工程名文件夹)，在 Troy 下建立 bin / lib / src 三个文件夹， Java 就是第三方 jar 包多，统统都放到 lib 目录下。</li> <li>然后在 src 目录下 自己建立包名，这里演示是 part2, 进入到 part2 目录建立一个 HelloWorld.java 文件</li> <li>相对来说，这样的目录结构对于 Java 开发是很清晰的，class文件 / Java文件 / jar文件都归类存放。</li> <li>这里需要注意的是，有主方法，也就是 main 方法的 java 文件的 package 必须和我们文件夹的名字一样。即，这里的 HelloWorld，有主方法，所在文件夹是 part2 ，第一行必须是 package part2，不能更改其它名字。如果是没有主方法的类，则 package 其它的名字也可以。这个也是为了配合 VIM 的特性和 Java 命令，需要注意的地方。
+##关于 Javac 和 Java</li> <li>这里会遇到一个很大的问题（尤其是一开始就使用 Eclipse 或者 MyEclipse 或者其它 IDE 开发的同学），那就是 javac 命令编译 java 命令的问题。</li> <li>如果说把所有文件都堆到一个文件夹里去做 Java 开发，那也就完全没有问题。
+<code>javac *.java 搞定！</code></li> <li>问题就出在，我们需要一个良好的目录结构，即上一部分讲到的目录结构。
+请问，如何编译 java 文件，才能即引入 lib 中的第三方 jar 包，又让 编译产生的所有 class 都在 bin 目录下？</li></ul> <hr> <p>答案涉及 javac 的参数问题
+先看编译命令：
+<code>javac -cp ../../lib:../../bin -Djava.ext.dirs=../../lib -d ../../bin HelloWorld.java</code></p> <ul><li>这里由于使用的系统是 Ubuntu ，所以目录之间使用的是 ：冒号隔开，如果是 windows ，请自行替为 ; 分号</li> <li>-cp ../../lib:../../bin  编译过程中需要引入 class 所在的文件夹的路径，linux用 冒号 分隔，windows 用 分号 分隔</li> <li>-Djava.ext.dirs=../../bin 告诉系统，引入的第三方 jar 包存放的目录，如有引用第三方 jar 包编译时会通过此参数到相应的路径下查找</li> <li>-d ../../bin 编译后的 class 文件都存放到 ../../bin 目录，也就是 bin 目录下</li></ul> <p>当通过编译后，bin 目录下，会出现一个 part2 文件夹，里面是 HelloWorld.class
+然后是运行命令：
+<code>java -cp ../../bin -Djava.ext.dirs=../../lib part2.HelloWorld</code></p> <ul><li>这里也需要指定 class 的目录，jar 包的目录。特别需要注意的是 包名 part2.HelloWorld ，单单写 HelloWorld 则运行出错。</li> <li>还有一个注意点就是，上面的 ../../bin 写的是相对路径，相当于写死了。相对的是 HelloWorld 所在的目录，我们工作的目录一定要转移到 part2 目录中。把 part2 作为当前目录。当然，如果也可以选择 part3 ，也可以是你所建立的任何名字的文件夹。</li></ul> <h1 id="plugin-list"><a href="#plugin-list" class="header-anchor">#</a> Plugin[^list]</h1> <h2 id="nerdtree"><a href="#nerdtree" class="header-anchor">#</a> NerdTree</h2> <p>～/.vimrc 中添加如下代码：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&quot; About NERDTree  
+noremap :NERDTreeToggle  
+autocmd vimenter * if !argc() | NERDTree | endif  &quot;open a NERDTree automatically when vim starts up if no files were specified  
+autocmd bufenter * if (winnr(&quot;$&quot;) == 1 &amp;&amp; exists(&quot;b:NERDTreeType&quot;) &amp;&amp; b:NERDTreeType == &quot;primary&quot;) | q | endif  
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>之后，按 F2 便可呼出 NerdTree ，一般打开 Java 文件后，NerdTree 固定在窗口左侧，可按 F2 关闭。</p> <p><strong>在NERDTree操作区的一些基本操作：</strong>
+?: 快速帮助文档
+o: 打开一个目录或者打开文件，创建的是buffer，也可以用来打开书签
+go: 打开一个文件，但是光标仍然留在NERDTree，创建的是buffer
+t: 打开一个文件，创建的是Tab，对书签同样生效
+T: 打开一个文件，但是光标仍然留在NERDTree，创建的是Tab，对书签同样生效
+i: 水平分割创建文件的窗口，创建的是buffer
+gi: 水平分割创建文件的窗口，但是光标仍然留在NERDTree
+s: 垂直分割创建文件的窗口，创建的是buffer
+gs: 和gi，go类似
+x: 收起当前打开的目录
+X: 收起所有打开的目录
+e: 以文件管理的方式打开选中的目录
+D: 删除书签
+P: 大写，跳转到当前根路径
+p: 小写，跳转到光标所在的上一级路径
+K: 跳转到第一个子路径
+J: 跳转到最后一个子路径
+<C-j>和<C-k>: 在同级目录和文件间移动，忽略子目录和子文件
+C: 将根路径设置为光标所在的目录
+u: 设置上级目录为根路径
+U: 设置上级目录为跟路径，但是维持原来目录打开的状态
+r: 刷新光标所在的目录
+R: 刷新当前根路径
+I: 显示或者不显示隐藏文件
+f: 打开和关闭文件过滤器
+q: 关闭NERDTree
+A: 全屏显示NERDTree，或者关闭全屏</C-k></C-j></p> <h3 id="nerdtree-快捷键辑录"><a href="#nerdtree-快捷键辑录" class="header-anchor">#</a> NERDTree 快捷键辑录</h3> <p>参看连接：http://www.cnblogs.com/lexus/archive/2012/11/04/2753187.html</p> <ul><li>切换工作台和目录
+ctrl + w + h    光标 focus 左侧树形目录
+ctrl + w + l    光标 focus 右侧文件显示窗口
+ctrl + w + w    光标自动在左右侧窗口切换
+ctrl + w + r    移动当前窗口的布局位置
+o       在已有窗口中打开文件、目录或书签，并跳到该窗口
+go      在已有窗口 中打开文件、目录或书签，但不跳到该窗口
+t       在新 Tab 中打开选中文件/书签，并跳到新 Tab
+T       在新 Tab 中打开选中文件/书签，但不跳到新 Tab
+i       split 一个新窗口打开选中文件，并跳到该窗口
+gi      split 一个新窗口打开选中文件，但不跳到该窗口
+s       vsplit 一个新窗口打开选中文件，并跳到该窗口
+gs      vsplit 一个新 窗口打开选中文件，但不跳到该窗口
+!       执行当前文件
+O       递归打开选中 结点下的所有目录
+x       合拢选中结点的父目录
+X       递归 合拢选中结点下的所有目录
+e       Edit the current dif</li></ul> <p>双击    相当于 NERDTree-o
+中键    对文件相当于 NERDTree-i，对目录相当于 NERDTree-e</p> <p>D       删除当前书签</p> <p>P       跳到根结点
+p       跳到父结点
+K       跳到当前目录下同级的第一个结点
+J       跳到当前目录下同级的最后一个结点
+k       跳到当前目录下同级的前一个结点
+j       跳到当前目录下同级的后一个结点</p> <p>C       将选中目录或选中文件的父目录设为根结点
+u       将当前根结点的父目录设为根目录，并变成合拢原根结点
+U       将当前根结点的父目录设为根目录，但保持展开原根结点
+r       递归刷新选中目录
+R       递归刷新根结点
+m       显示文件系统菜单
+cd      将 CWD 设为选中目录</p> <p>I       切换是否显示隐藏文件
+f       切换是否使用文件过滤器
+F       切换是否显示文件
+B       切换是否显示书签</p> <p>q       关闭 NerdTree 窗口
+?       切换是否显示 Quick Help</p> <ul><li>切换标签页
+:tabnew [++opt选项] ［＋cmd］ 文件      建立对指定文件新的tab
+:tabc   关闭当前的 tab
+:tabo   关闭所有其他的 tab
+:tabs   查看所有打开的 tab
+:tabp   前一个 tab
+:tabn   后一个 tab</li></ul> <p>标准模式下：
+gT      前一个 tab
+gt      后一个 tab</p> <p>MacVim 还可以借助快捷键来完成 tab 的关闭、切换
+cmd+w   关闭当前的 tab
+cmd+{   前一个 tab
+cmd+}   后一个 tab</p> <ul><li>NerdTree 在 .vimrc 中的常用配置
+&quot; 在 vim 启动的时候默认开启 NERDTree（autocmd 可以缩写为 au）
+autocmd VimEnter * NERDTree
+&quot; 按下 F2 调出/隐藏 NERDTree
+map  :silent! NERDTreeToggle
+&quot; 将 NERDTree 的窗口设置在 vim 窗口的右侧（默认为左侧）
+let NERDTreeWinPos=&quot;right&quot;
+&quot; 当打开 NERDTree 窗口时，自动显示 Bookmarks
+let NERDTreeShowBookmarks=1</li></ul> <h2 id="syntastic"><a href="#syntastic" class="header-anchor">#</a> syntastic</h2> <p>how to use after installed :http://blog.jobbole.com/107411/</p> <p>https://github.com/vim-syntastic/syntastic
+https://github.com/vim-syntastic/syntastic/blob/master/doc/syntastic-checkers.txt
+https://github.com/vim-syntastic/syntastic/wiki/Syntax-Checker-Guide</p> <p><leader>d 在 vim 底部显示详细错误描述
+You can see syntastic's idea of available checkers by running <code>:SyntasticInfo</code>
+:Errors 显示错误面板,展现当前源文件中所有语法相关错误的描述
+:lnext  到下一个错误
+:lprevious 到上一个错误
+:help syntastic-checkers
+:w	保存后自动显示错误
+:SyntasticCheck 来手动检测错误
+:Errors 打开错误位置列表并使用 <code>:lclose</code> 来关闭
+:SyntasticReset 可以清除掉错误列表
+:SyntasticToggleMode 来切换激活（在写到 buffer 时检测）和被动（即手动检测）检测错误。”</leader></p> <h2 id="airline"><a href="#airline" class="header-anchor">#</a> airline</h2> <h3 id="安装字体"><a href="#安装字体" class="header-anchor">#</a> 安装字体</h3> <p>Installation
+Run<code>./install.sh</code> to install all Powerline Fonts or see the documentation for details.</p> <p>On other environments, you can copy and paste these commands to your terminal. Comments are fine too.</p> <div class="language- line-numbers-mode"><pre class="language-text"><code># clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
+Uninstall
+Run ./uninstall.sh to uninstall all Powerline Fonts. You can also copy the quick installation commands changing only the line ./install.sh to ./uninstall.sh.
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h2 id="tagbar"><a href="#tagbar" class="header-anchor">#</a> TagBar</h2> <p>定制呈现内容：https://github.com/majutsushi/tagbar/wiki
+help:tagbar	tagbar的说明文档
+如果在写golang的时候要用到tagbar, 需要安装gotags支持</p> <p>首先, vim必须是7.0以上
+安装依赖 Exuberant ctags</p> <div class="language- line-numbers-mode"><pre class="language-text"><code># ubuntu
+sudo apt-get install ctags
+
+# centos
+sudo yum install ctags
+
+# mac
+brew install ctags
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="cscope"><a href="#cscope" class="header-anchor">#</a> cscope</h2> <h2 id="ctrlp"><a href="#ctrlp" class="header-anchor">#</a> ctrlp</h2> <p>https://github.com/kien/ctrlp.vim</p> <p>启用ctrlp</p> <p>运行命令:CtrlP或:CtrlP [starting-directory]来以查找文件模式来启用** ctrlp**
+运行命令:CtrlPBuffer或:CtrlPMRU来以查找缓冲或最近打开文件模式来启用ctrlp
+运行命令CtrlPMixed来查找文件、查找缓冲和最近打开文件混合模式来启动** ctrlp**
+基本使用</p> <p>按<c-f>和<c-b>在三种查找模式中互相切换
+按<c-y>来创建新文件和对应的父目录
+按<c-d>来切换到只查找文件名而不是全路径
+按<c-j>，<c-k>或箭头方向键来移动查找结果列表
+按<c-t>或<c-v>，<c-x>来以新标签或分割窗口的方式来打开文件
+按<c-z>来标识或取消标识文件，然后按<c-o>来打开文件
+按<c-n>，<c-p>来在提示历史中选择下一个/上一个字符串</c-p></c-n></c-o></c-z></c-x></c-v></c-t></c-k></c-j></c-d></c-y></c-b></c-f></p> <h2 id="vim-easymotion"><a href="#vim-easymotion" class="header-anchor">#</a> vim-easymotion</h2> <p>用法1: 跳转到当前光标前后的位置(w/b)
+快捷键<code>&lt;leader&gt;&lt;leader&gt;w</code>(即,,w)和<code>&lt;leader&gt;&lt;leader&gt;b</code>(即,,b)
+助记: word and back</p> <p>用法2: 搜索跳转(s)
+快捷键<leader><leader>s(即,,s), 然后输入要搜索的字母, 这个跳转是双向的
+助记: search</leader></leader></p> <p>用法3: 行级跳转(jk)
+配置</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>map &lt;Leader&gt;&lt;Leader&gt;j &lt;Plug&gt;(easymotion-j)
+map &lt;Leader&gt;&lt;Leader&gt;k &lt;Plug&gt;(easymotion-k)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>快捷键: <leader><leader>j和<leader><leader>k(即,,j和,,k)</leader></leader></leader></leader></p> <p>助记: hjkl不解释</p> <p>用法4: 行内跳转(hl)
+配置</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>map &lt;Leader&gt;&lt;leader&gt;h &lt;Plug&gt;(easymotion-linebackward)
+map &lt;Leader&gt;&lt;leader&gt;l &lt;Plug&gt;(easymotion-lineforward)
+快捷键&lt;leader&gt;&lt;leader&gt;h和&lt;leader&gt;&lt;leader&gt;l(即,,h和,,l)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>助记: hjkl不解释</p> <p>用法5: 重复上一次动作(.)
+配置</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>map &lt;Leader&gt;&lt;leader&gt;. &lt;Plug&gt;(easymotion-repeat)
+快捷键&lt;leader&gt;&lt;leader&gt;.
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>助记: 同repeat插件....</p> <p>最终配置</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Bundle 'Lokaltog/vim-easymotion'
+let g:EasyMotion_smartcase = 1
+&quot;let g:EasyMotion_startofline = 0 &quot; keep cursor colum when JK motion
+map &lt;Leader&gt;&lt;leader&gt;h &lt;Plug&gt;(easymotion-linebackward)
+map &lt;Leader&gt;&lt;Leader&gt;j &lt;Plug&gt;(easymotion-j)
+map &lt;Leader&gt;&lt;Leader&gt;k &lt;Plug&gt;(easymotion-k)
+map &lt;Leader&gt;&lt;leader&gt;l &lt;Plug&gt;(easymotion-lineforward)
+&quot; 重复上一次操作, 类似repeat插件, 很强大
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>map <Leader><leader>. <Plug>(easymotion-repeat)
+建议
+还可以<Leader><leader>f和<Leader><leader>t, 不过建议简单化, 一个<Leader><leader>w/b走天下.</leader></Leader></leader></Leader></leader></Leader></Plug></leader></Leader></p> <p>可以配置2/n个字符的搜索跳转, 更精准, 按需自取(个人觉得太复杂了没必要) 文档和文档</p> <h2 id="ufexplorer"><a href="#ufexplorer" class="header-anchor">#</a> ufexplorer</h2> <p>\be打开历史文件列表，\bv水平新建历史文件列表窗口，\bs垂直新建历史文件列表</p> <h2 id="win-manger"><a href="#win-manger" class="header-anchor">#</a> win manger</h2> <p>非必须：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>win manger插件要修改下，打开 winmanager/plugins/winmanager.vim ，在文件顶部加入下面的代码：'''[ ]'
+if g:AutoOpenWinManager 
+autocmd VimEnter * nested call s:ToggleWindowsManager()|1wincmd w &quot;vim进入时自动执行 ToggleWindowsManager ，然后移动一次窗口焦点
+endif
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="ultisnips"><a href="#ultisnips" class="header-anchor">#</a> Ultisnips</h2> <p>类似TextMate的snippets，是一个块补全的插件。除了 Java 还内置了市面上几乎所有流行语言的补全。也可以自定义
+##ctags+cscope</p> <h2 id="vim-commentary-注释代码的插件"><a href="#vim-commentary-注释代码的插件" class="header-anchor">#</a> vim-commentary:注释代码的插件</h2> <p>块模式：v 命令选中需要注释的内容，gc 注释，取消注释也是同样的步骤。
+V 命令，选中当前行，gc 注释当前正行内容，这个使用是最方便的，也是最多的。
+##netrw
+Netrw插件中常用键绑定有：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;F1&gt;        显示帮助
+&lt;cr&gt;        如果光标下为目录，则进入该目录；如果光标下是文件，则用vim打开该文件
+-           返回上级目录
+c           切换vim的当前工作目录为正在浏览的目录
+d           创建目录 
+D           删除文件或目录
+i           切换显示方式
+R           改名文件或目录
+s           选择排序方式
+x           定制浏览方式，使用你指定的程序打开该文件 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h2 id="identline"><a href="#identline" class="header-anchor">#</a> identline</h2> <p>https://github.com/Yggdroot/indentLine</p> <h2 id="vim-indent-guides"><a href="#vim-indent-guides" class="header-anchor">#</a> vim-indent-guides</h2> <p>https://github.com/nathanaelkane/vim-indent-guides
+:help indent-guides</p> <h2 id="vim-gitgutter"><a href="#vim-gitgutter" class="header-anchor">#</a> vim-gitgutter</h2> <p>https://github.com/airblade/vim-gitgutter</p> <h2 id="plugin-davidhalter-jedi-vim-python的自动补全"><a href="#plugin-davidhalter-jedi-vim-python的自动补全" class="header-anchor">#</a> Plugin 'davidhalter/jedi-vim'   python的自动补全</h2> <h2 id="javacomplete-java-补全插件"><a href="#javacomplete-java-补全插件" class="header-anchor">#</a> javacomplete: Java 补全插件</h2> <p>可以像 Eclipse 一样提示对象的函数，不过有些时候会提示不出来，不知道为什么。
+##TagHightlight:
+根据生成的Tag文件，高亮类、变量、函数和关键字。</p> <h1 id="geeknote-evernote-supported-list"><a href="#geeknote-evernote-supported-list" class="header-anchor">#</a> geeknote(evernote supported)[^list]</h1> <blockquote><p>https://github.com/pipakin/geeknote
+https://www.linuxidc.com/Linux/2015-01/112421.htm</p></blockquote> <h2 id="download-geeknote"><a href="#download-geeknote" class="header-anchor">#</a> download geeknote</h2> <ul><li>Debian、 Ubuntu 和 Linux Mint</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code># Install dependencies. (This example for Debian-based systems):
+$ [sudo] apt-get update; [sudo] apt-get -y install python-setuptools
+
+# Download the repository.
+$ git clone git://github.com/pipakin/geeknote.git
+
+$ cd geeknote
+
+# Installation
+$ [sudo] python[2] setup.py install
+
+# Launch Geeknote and go through login procedure.
+$ geeknote login
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><ul><li>在 Fedora 或者 CentOS/RHEL 中</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ sudo yum install git
+$ git clone git://github.com/VitaliyRodnenko/geeknote.git
+$ cd geeknote
+$ sudo python setup.py install
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>在 Arch Linux 中
+对于ArchLinux用户，只需要使用AUR中的包。</li></ul> <h2 id="geeknote-的基本使用"><a href="#geeknote-的基本使用" class="header-anchor">#</a> Geeknote 的基本使用</h2> <blockquote><p><a href="http://www.geeknote.me/documentation/" target="_blank" rel="noopener noreferrer">官方文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></blockquote> <ul><li><p>一旦你安装完Geeknote后，你应该将Geeknote与你的Evernote账号关联：
+<code>$ geeknote login</code>
+接着输入你的email地址、密码和你的二步验证码。如果你没有后者的话，忽略它并按下回车。</p></li> <li><p>设置你最喜欢的文本编辑器：
+<code>$ geeknote settings --editor vim</code></p></li></ul> <hr> <ul><li>然后，一般创建一条新笔记的语法是：
+<code>$ geeknote create --title [title of the new note](--content [content]--tags [comma-separated tags]--notebook [comma-separated notebooks])</code>
+上面的命令中，只有‘title’是必须的，它会与一条新笔记的标题相关联。其他的标注可以为笔记添加额外的元数据：添加标签来与你的笔记关联、指定放在那个笔记本里。同样，如果你的标题或者内容中有空格，不要忘记将它们放在引号中。
+<code>$ geeknote create --title &quot;My note&quot;--content &quot;This is a test note&quot;--tags &quot;finance, business, important&quot;--notebook &quot;Family&quot;</code></li></ul> <hr> <ul><li><p>然后，你可以编辑你的笔记。语法很相似：
+<code>$ geeknote edit --note [title of the note to edit](--title [new title]--tags [new tags]--notebook [new notebooks])</code></p></li> <li><p>注意可选的参数如新的标题、标签和笔记本，用来修改笔记的元数据。你也可以用下面的命令重命名笔记：
+<code>$ geeknote edit --note [old title]--title [new title]</code></p></li></ul> <hr> <p>现在基本的创建和编辑已经完成了，更高级的特性是搜索和删除。你可以下面的语法搜索你的笔记：
+<code>$ geeknote find --search [text-to-search]--tags [comma-separated tags]--notebook [comma-separated notebooks]--date [date-or-date-range]--content-search</code>
+默认地上面的命令会通过标题搜索笔记。 用&quot;--content-search&quot;选项，就可以按内容搜索。
+比如：
+<code>$ geeknote find --search &quot;*restaurant&quot;--notebooks &quot;Family&quot;--date 31.03.2014-31.08.2014</code></p> <hr> <p>显示指定标题的笔记：
+<code>$ geeknote show [title]</code></p> <p>我最喜欢使用的一个技巧是使用：
+<code>$ geeknote show &quot;*&quot;</code>
+这会显示所有的笔记并允许你在这中选择一个。</p> <hr> <p>删除一条笔记：
+<code>$ geeknote remove --note [title]</code>
+小心这是真正的删除。它会从云存储中删除这条笔记。</p> <hr> <p>最后有很多的选项来管理标签和笔记本。我想最有用的就是显示笔记本列表。
+<code>$ geeknote notebook-list</code></p> <p>下面的命令非常相像。你可以猜到，可以用下面的命令列出所有的标签：
+<code>$ geeknote tag-list</code></p> <p>创建一个笔记本：
+$ geeknote notebook-create --title [notebook title]
+创建一个标签：</p> <p><code>$ geeknote tag-create --title [tag title]</code>
+一旦你了解了窍门，很明显这些语法是非常自然明确的。</p> <h2 id="gnsync工具"><a href="#gnsync工具" class="header-anchor">#</a> gnsync工具</h2> <p>Geeknote自带的gnsync工具可以让你在Evernote和本地计算机之间同步。不过，我发现它的语法有点枯燥：</p> <p><code>$ gnsync --path [where to sync](--mask [what kind of file to sync]--format [in which format]--logpath [where to write the log]--notebook [which notebook to use])</code></p> <p>下面是这些参数的意义：</p> <p>--path /home/adrien/Documents/notes/: 与Evernote同步笔记的位置。
+--mask &quot;*.txt&quot;: 只同步纯文本文件。默认gnsync会尝试同步所有文件。
+--format markdown: 你希望它们是纯文本或者markdown格式（默认是纯文本）。
+--logpath /home/adrien/gnsync.log: 同步日志的位置。为防出错，gnsync会在那里写入日志信息。
+--notebook &quot;Family&quot;: 同步哪个笔记本中的笔记。如果留空，程序会创建一个以你同步文件夹命令的笔记本。</p> <blockquote><p>总的来说，Geeknote是一款漂亮的Evernote的命令行客户端。我个人不常使用Evernote，但它仍然很漂亮和有用。命令行一方面让它变得很极客且很容易与shell脚本结合。此外，在Git上还有Geeknote的一个分支项目，在ArchLinux AUR上称为<a href="https://aur.archlinux.org/packages/geeknote-improved-git/" target="_blank" rel="noopener noreferrer">geeknote-improved-git<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，貌似它有更多的特性和比其他分支更积极的开发。我觉得值得去看看。</p></blockquote> <h1 id="markdown-supported-list"><a href="#markdown-supported-list" class="header-anchor">#</a> markdown supported[^list]</h1> <ul><li>将Markdown转化为docx
+这时需要安装pandoc，然后运行如下命令即可：
+<code>pandoc -o hello.docx hello.md</code></li></ul> <h2 id="markdown-preview-vim"><a href="#markdown-preview-vim" class="header-anchor">#</a> markdown-preview.vim</h2> <blockquote><p>https://github.com/iamcco/markdown-preview.vim</p></blockquote> <p>用 vim 打开 md 文件，执行
+<code>MarkdownPreview</code> 打开浏览窗口
+<code>MarkdownPreviewStop</code> 关闭浏览窗口</p> <p>注：mac 电脑使用 chrome 浏览器，需设置</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>let g:mkdp_path_to_chrome = &quot;open -a Google\\ Chrome&quot;
+&quot; or
+let g:mkdp_path_to_chrome = &quot;/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="vim-markdown"><a href="#vim-markdown" class="header-anchor">#</a> vim-markdown</h2> <blockquote><p>https://github.com/plasticboy/vim-markdown</p></blockquote> <h2 id="vim-markdown-toc自动添加toc目录"><a href="#vim-markdown-toc自动添加toc目录" class="header-anchor">#</a> vim-markdown-toc自动添加toc目录</h2> <blockquote><p>http://mazhuang.org/2015/12/19/vim-markdown-toc/#%E7%94%9F%E6%88%90-table-of-contents
+https://github.com/mzlogin/vim-markdown-toc</p></blockquote> <p>生成 Table of Contents
+将光标移动到想在后面插入 Table of Contents 的那一行，然后运行下面的某个命令：</p> <p>:GenTocGFM	
+生成 GFM 链接风格的 Table of Contents。
+适用于 GitHub 仓库里的 Markdown 文件，比如 README.md，也适用用于生成 GitBook 的 Markdown 文件。</p> <p>:GenTocRedcarpet
+生成 Redcarpet 链接风格的 Table of Contents。
+适用于使用 Redcarpet 作为 Markdown 引擎的 Jekyll 项目或其它地方。</p> <p>更新已存在的 Table of Contents
+通常不需要手动做这件事，保存文件时会自动更新已经存在的 Table of Contents。
+除非是在配置里关闭了保存时自动更新，
+<strong>并且维持插入 Table of Contents 前后的 </strong>，此时可使用 :UpdateToc 命令手动更新。</p> <p>删除 Table of Contents
+:RemoveToc 命令可以帮你删除本插件生成的 Table of Contents。</p> <h2 id="通过tagbar呈现"><a href="#通过tagbar呈现" class="header-anchor">#</a> 通过tagbar呈现</h2> <p>https://github.com/jszakmeister/markdown2ctags</p> <h1 id="ycm-youcompleteme-list"><a href="#ycm-youcompleteme-list" class="header-anchor">#</a> YCM(YouCompleteMe)[^list]</h1> <blockquote><p>https://github.com/Valloric/YouCompleteMe
+https://www.jianshu.com/p/d908ce81017a</p></blockquote> <h2 id="工具准备"><a href="#工具准备" class="header-anchor">#</a> 工具准备</h2> <ul><li><a href="https://www.linuxprobe.com/vim8-0-linux.html" target="_blank" rel="noopener noreferrer">安装vim最新版<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>sudo add-apt-repository ppa:jonathonf/vim
+sudo apt update
+sudo apt install vim
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>或者自己编译安装</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>1. 获取Vim仓库：   
+
+　　git clone https://github.com/vim/vim.git 
+
+2. 升级到最新的版本：
+
+　　cd vim
+
+　　git pull 
+
+3. 安装：
+
+　　cd src
+
+　　make distclean #如果你以前编译过Vim
+
+　　make
+
+　　sudo make install
+
+ 
+
+错误解决： 
+
+　　报错：checking for tgetent()... configure: error: NOT FOUND!
+
+　　　　　You need to install a terminal library; for example ncurses.
+　　解决方法：sudo apt-get install libncurses5-dev
+
+ 
+
+　　
+
+Vim卸载方法（Ubuntu）：
+
+　　sudo apt-get remove --purge vim (--purge 是完全删除，会连配置文件一起删除)
+
+　　suso apt-get clean 
+
+
+ 
+
+获得python支持，编译时得加入参数
+
+./configure --with-features=huge --enable-python3interp --enable-pythoninterp --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu/ --enable-rubyinterp --enable-luainterp --enable-perlinterp --with-python3-config-dir=/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu/ --enable-multibyte --enable-cscope      --prefix=/usr/local/vim/
+
+参数说明如下：
+
+--with-features=huge：支持最大特性
+--enable-rubyinterp：打开对ruby编写的插件的支持
+--enable-pythoninterp：打开对python编写的插件的支持
+--enable-python3interp：打开对python3编写的插件的支持
+--enable-luainterp：打开对lua编写的插件的支持
+--enable-perlinterp：打开对perl编写的插件的支持
+--enable-multibyte：打开多字节支持，可以在Vim中输入中文
+--enable-cscope：打开对cscope的支持
+--with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu/ 指定python 路径
+--with-python-config-dir=/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu/ 指定python3路径
+
+--prefix=/usr/local/vim：指定将要安装到的路径(自行创建)
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br></div></div><ul><li>确保python头文件已安装
+编译vim插件支持python和python3，如果只使用系统自带的python可能存在问题，就是编译vim时，vim会自动去寻找/usr/lib/python3/config 会找不到，所以重新安装一遍python。
+<code>vim --version</code>//查看vim版本</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>sudo apt-get install python-dev
+sudo apt-get install python3-dev
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>确保支持 python 2/3 脚本
+<code>:echo has('python') || has('python3')</code>
+若结果是 1 则证明是支持的
+(建议先给python设置路径，暂时python设置为2,回头再设置为自动模式)</li> <li>安装cmake
+<code>sudo apt-get install build-essential cmake</code></li></ul> <hr> <ul><li>通过 Vundle 来安装 YCM（官方推荐）</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>call vundle#begin()
+. . . 
+Plugin 'Valloric/YouCompleteMe’
+. . .
+call vundle#end()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>然后保存运行 vim 命令 :PluginInstall 安装 需要特别注意的是这个时候可能等的时间会相当的长
+使用Vundle安装YCM时，如果出现<code>YouCompleteMe unavailable: No module named 'future'</code>错误，可以运行下面的命令来解决。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>cd ~/.vim/bundle/YouCompleteMe
+git submodule update --init --recursive
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>通过 Git 安装 YCM
+如果等待 Vundle 安装 YCM 等了好久终于貌似好像成功了，打开 vim 却发现 YouCompleteme unavailable : no module named future （当然没有遇到算你运气好），那么你应该考虑一下换用 Git 来安装 YCM：</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code># 下载 （在 `～/.vim/bundle` 目录下）
+$ git clone --recursive [https://github.com/Valloric/YouCompleteMe.git](https://github.com/Valloric/YouCompleteMe.git)
+# 检查完整性（在 `～/.vim/bundle/YouCompleteMe` 目录下）
+$ git submodule update --init --recursive
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="python编译安装ycm"><a href="#python编译安装ycm" class="header-anchor">#</a> python编译安装YCM</h2> <h3 id="ubuntu"><a href="#ubuntu" class="header-anchor">#</a> ubuntu</h3> <ul><li><p>Install development tools and CMake:
+<code>sudo apt-get install build-essential cmake</code></p></li> <li><p>Note: On older systems (e.g. Ubuntu 14.04) you may run into compilation issues with cmake. Therefore, install the following instead:
+<code>sudo apt-get install build-essential cmake3</code></p></li> <li><p>Make sure you have Python headers installed:
+<code>sudo apt-get install python-dev python3-dev</code></p></li> <li><p>compile YCM</p></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>//Compiling YCM with semantic support for C-family languages:
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --clang-completer
+
+//Compiling YCM without semantic support for C-family languages:
+cd ~/.vim/bundle/YouCompleteMe
+./install.py
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><ul><li><p>The following additional language support options are available:</p></li> <li><p>C# support: install Mono and add --cs-completer when calling ./install.py.</p></li> <li><p>Go support: install Go and add --go-completer when calling ./install.py.</p></li> <li><p>TypeScript support: install Node.js and npm then install the TypeScript SDK with npm install -g typescript.</p></li> <li><p>JavaScript support: install Node.js and npm and add --js-completer when calling ./install.py.</p></li> <li><p>Rust support: install Rust and add --rust-completer when calling ./install.py.</p></li> <li><p>Java support: install JDK8 (version 8 required) and add --java-completer when calling ./install.py.</p></li> <li><p>To simply compile with everything enabled, there's a --all flag. So, to install with all language features, ensure xbuild, go, tsserver, node, npm, rustc, and cargo tools are installed and in your PATH, then simply run:</p></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>cd ~/.vim/bundle/YouCompleteMe
+./install.py --all
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><hr> <ul><li>正常来说,YCM会去下载clang的包，如果已经有，也可以用系统--system-libclang。</li> <li>可使用 ./install.py --help 查看支持哪些补全</li> <li>如果不需要c-family的补全，可以去掉--clang-completer。如果需要c#的补全，请加上--omnisharp-completer。</li> <li>可直接使用参数--all 加上所有的补全，包括(c/c++ go c# php等)</li> <li>若提示需要安装YouCompleteMe子模块，需要运行<code>git submodule update --init --recursive</code>，然后再执行安装命令 ./install.py [options]</li></ul> <h2 id="编译与构建构建-ycm-core-库-语义补全支持"><a href="#编译与构建构建-ycm-core-库-语义补全支持" class="header-anchor">#</a> 编译与构建构建 ycm_core 库(语义补全支持)</h2> <h3 id="clang"><a href="#clang" class="header-anchor">#</a> Clang</h3> <p>YCM 的顶层目录或者说根目录应该是 ～/.vim/bundle/YouCompleteMe
+0. 下载安装最新版的 libclang
+如果不需要 C 家族的语义化补全，则可跳过这一步
+<code># apt-get install llvm-3.9 clang-3.9 libclang-3.9-dev libboost-all-dev</code></p> <ol><li>创建一个目录放编译过程中产生的文件`</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ mkdir ~/.ycm_build
+$ cd ~/.ycm_build
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ol start="2"><li>生成 makefile
+下一步生成makefile，这一步很重要，有点复杂。</li></ol> <p>如果跳过第三步不需要C族语言的语义支持的话，在.ycm_build目录下执行</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ cmake -G &quot;Unix Makefiles&quot; . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><hr> <p>如果没有跳过第三步，说明需要 c 家族的语义化补全则需运行
+还得分几种情况：</p> <p>（0）如果前面编译安装ycm_core时已经加了<code>--system-libclang</code>参数或已经自动下载（默认时ubuntu的libclang.so）构建完毕,下面可以省略</p> <p>（1）假如你从llvm的官网下载了LLVM+Clang，然后解压到：~/ycm_temp/llvm_root_dir （该目录下有 bin, lib, include 等文件夹），然后执行：
+<code>:~/.ycm_build$ cmake -G &quot;Unix Makefiles&quot; -DPATH_TO_LLVM_ROOT=~/ycm_temp/llvm_root_dir ~/.vim/bundle/YouCompleteMe/cpp</code></p> <p>Fedora:
+<code>cmake -G &quot;Unix Makefiles&quot; -DPATH_TO_LLVM_ROOT=~/ycm_temp/llvm_root_dir/clang+llvm-6.0.0-x86_64-linux-gnu-Fedora27 ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp</code>
+（2）如果想用系统的libclang：
+<code>$ cmake -G &quot;Unix Makefiles&quot; -DUSE_SYSTEM_BOOST=ON　-DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DEXTERNAL_LIBCLANG_PATH=/usr/lib/x86_64-linux-gnu/libclang-3.9.so . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp</code></p> <p><code>$ cmake -G &quot;Unix Makefiles&quot; -DUSE_SYSTEM_BOOST=ON　-DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DEXTERNAL_LIBCLANG_PATH=/usr/lib64/libclang.so . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp</code></p> <p>-DEXTERNAL_LIBCLANG_PATH=		//添加语义库的路径和支持，可能默认使用的是外部的 libclang-3.6 ，系统安装的 libclang 最低应要是 3.9</p> <p>~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp		//CMakeLists.txt.也有可能直接在third_parth/ycmd/ 文件夹中</p> <ul><li>如果报错<code>Unable to find the Boost header files</code> <ul><li>首先去判断是否已经有文件存在.
+<code>locate boost_system</code></li> <li>结果:<code>/usr/lib/x86_64-linux-gnu/libboost_system.so.1.54.0</code></li> <li>说明已经有这个文件存在,只是编译的时候找不到.</li> <li>切换到/usr/lib/x86_64-linux-gnu/,列出boost开头的lib文件:ls libboost*</li></ul></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>libboost_date_time.so.1.54.0        libboost_system.so.1.54.0
+libboost_iostreams.so.1.54.0        libboost_thread.so.1.54.0
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>我们发现,已经有system,date_time,iostream,thread,但是没有filesystem和chrono.</p> <ul><li>直接建立一个链接:</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>sudo ln -s libboost_system.so.1.54.0 libboost_system.so
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>没有的去下载安装</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>sudo apt-get install libboost-filesystem
+
+//not found
+apt-cache search boost-system 
+apt-cache search libboost
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ul><li>（3）如果想用自定义的libclang：
+<code>:~/.ycm_build$ cmake -G &quot;Unix Makefiles&quot; -DEXTERNAL_LIBCLANG_PATH=/path/to/libclang.so ~/.vim/bundle/YouCompleteMe/cpp</code><br>
+/path/to/libclang.so这部分填入你自己的路径。</li></ul> <p>编译的结果是之前新建的目录（也就是当前目录下生成了一些 Makefile 文件）</p> <ol start="3"><li>构建 ycm_core</li></ol> <p>这个构建选项进针对 Windows</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#  --config Release 
+$ cmake --build . --target ycm_core --config Release
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="配置vimrc文件"><a href="#配置vimrc文件" class="header-anchor">#</a> 配置vimrc文件</h2> <p>复制转移 .ycm_extra_conf.py 文件</p> <ul><li><p>如果想要完全自定义，可以从头开始定义模板文件
+<code>$ cp ~/.vim/bundle/YouCompleteMe/third_party/ycmd/examples/.ycm_extra_conf.py ~/.vim/</code></p></li> <li><p><code>/home/blinderjay/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py</code>此文件是编译时自动修改过得，可以直接用</p></li></ul> <p>添加 vim 配置
+注意下面的 python 解释器的路径要和编译 ycm_core 的时候使用的 python 解释器是相同的版本（2 或
+3）</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>“ ～/.vimrc
+let g:ycm_server_python_interpreter='/usr/bin/python'
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="测试较错"><a href="#测试较错" class="header-anchor">#</a> 测试较错</h2> <ul><li>测试安装
+在 vim 中运行 <code>:YcmToggleLogs stderr</code>查看错误日志</li></ul> <p>没有看到报错信息，则证明 YCM 已成功安装。</p> <ul><li>一些错误</li></ul> <ol><li><code>The ycmd server SHUT DOWN (restart with :YcmRestartServer). Stderr (last 30 lin es)</code> <code>python3 ~/.vim/bundle/YouCompleteMe/install.py</code> 成功运行一遍就好了, 如果出错的话,提示缺啥装啥就行了</li></ol> <h2 id="ycm的配置和使用"><a href="#ycm的配置和使用" class="header-anchor">#</a> YCM的配置和使用</h2> <p><a href="https://github.com/Valloric/YouCompleteMe#options" target="_blank" rel="noopener noreferrer">vimrc配置选项<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>
+YCM可以打开location-list来显示警告和错误的信息<code>:YcmDiags</code></p> <p>YouCompleteMe提供的其他功能
+YCM除了提供了基本的补全功能,自动提示错误的功能外,还提供了类似tags的功能：</p> <p>跳转到定义GoToDefinition
+跳转到声明GoToDeclaration
+以及两者的合体GoToDefinitionElseDeclaration</p> <h2 id="py文件改动-if-necessary"><a href="#py文件改动-if-necessary" class="header-anchor">#</a> py文件改动(if necessary)</h2> <p>如上所述，YCM在补全时需要ycm_extra_conf.py这个文件，所以我们需要对这个文件进行改动，以满足基本C族语言的补全需要。在~/.vim/bundle/YouCompleteMe/cpp/ycm下找到该文件的模板，在flag里面添加如下内容(系统文件用-isyetem，第三方文件用 -I)：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>'-isystem',  
+'/usr/include',  
+'-isystem',  
+'/usr/include/c++/',  
+'-isystem',  
+'/usr/include/i386-linux-gnu/c++'  
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>如果要让其对C++标准库补全生效，还要把配置文件中的这几行（从try到pass这4行）注释掉：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code># NOTE: This is just for YouCompleteMe; it's highly likely that your project  
+# does NOT need to remove the stdlib flag. DO NOT USE THIS IN YOUR  
+# ycm_extra_conf IF YOU'RE NOT 100% SURE YOU NEED IT.  
+try:  
+  final_flags.remove( '-stdlib=libc++' )  
+except ValueError:  
+  pass  
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>最好先把YCM作者提供的模板备份一下再做改动，然后将改动好的文件就放在原来的位置，作为全局的ycm_extra_conf.py，这样平时写个小Cpp的程序就不需要再单独创建一个。要使之生效，需要在.vimrc里面设置YCM相应的选项，此选项会在下面配置部分详细说明。对于特定的工程，将其拷贝到工程文件夹下，然后在这基础上再修改。不用担心工程文件夹下的ycm_extra_conf.py会和全局的冲突，因为开启vim之后，ycm会现在工程文件夹下搜索该文件，此处的配置文件优先级最高。</p> <h2 id="某人的ycm配置1"><a href="#某人的ycm配置1" class="header-anchor">#</a> 某人的YCM配置1</h2> <p>在.vimrc文件中添加针对YCM的设置：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&quot;设置error和warning的提示符，如果没有设置，ycm会以syntastic的  
+&quot; g:syntastic_warning_symbol 和 g:syntastic_error_symbol 这两个为准  
+let g:ycm_error_symbol='&gt;&gt;'  
+let g:ycm_warning_symbol='&gt;*'  
+[plain] view plain copy
+&quot;设置跳转的快捷键，可以跳转到definition和declaration  
+nnoremap &lt;leader&gt;gc :YcmCompleter GoToDeclaration&lt;CR&gt;  
+nnoremap &lt;leader&gt;gf :YcmCompleter GoToDefinition&lt;CR&gt;  
+nnoremap &lt;leader&gt;gg :YcmCompleter GoToDefinitionElseDeclaration&lt;CR&gt;  
+&quot;nmap &lt;F4&gt; :YcmDiags&lt;CR&gt;  
+[plain] view plain copy
+&quot;设置全局配置文件的路径  
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'  
+&quot;开启基于tag的补全，可以在这之后添加需要的标签路径  
+let g:ycm_collect_identifiers_from_tags_files = 1  
+&quot;开启语义补全  
+let g:ycm_seed_identifiers_with_syntax = 1  
+&quot;在接受补全后不分裂出一个窗口显示接受的项  
+set completeopt-=preview  
+&quot;不显示开启vim时检查ycm_extra_conf文件的信息  
+let g:ycm_confirm_extra_conf=0  
+&quot;每次重新生成匹配项，禁止缓存匹配项  
+let g:ycm_cache_omnifunc=0  
+&quot;在注释中也可以补全  
+let g:ycm_complete_in_comments=1  
+&quot;输入第一个字符就开始补全  
+let g:ycm_min_num_of_chars_for_completion=1  
+&quot;不查询ultisnips提供的代码模板补全，如果需要，设置成1即可  
+let g:ycm_use_ultisnips_completer=0  
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><Ctrl>+<Space>这个快捷键保留给omniCppCompleter，虽然开启了ycm补全，这个功能依然可用。
+<p>更多关于YCM的配置选项和其他信息，查看YCM的帮助文档就好。</p> <h2 id="某人的ycm配置2"><a href="#某人的ycm配置2" class="header-anchor">#</a> 某人的YCM配置2</h2> <p>使用命令<code>:YcmDiags</code>可以打开location-list查看警告和错误信息。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>set completeopt=longest,menu	&quot;让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif	&quot;离开插入模式后自动关闭预览窗口
+inoremap &lt;expr&gt; &lt;CR&gt;       pumvisible() ? &quot;\&lt;C-y&gt;&quot; : &quot;\&lt;CR&gt;&quot;	&quot;回车即选中当前项
+&quot;上下左右键的行为 会显示其他信息
+inoremap &lt;expr&gt; &lt;Down&gt;     pumvisible() ? &quot;\&lt;C-n&gt;&quot; : &quot;\&lt;Down&gt;&quot;
+inoremap &lt;expr&gt; &lt;Up&gt;       pumvisible() ? &quot;\&lt;C-p&gt;&quot; : &quot;\&lt;Up&gt;&quot;
+inoremap &lt;expr&gt; &lt;PageDown&gt; pumvisible() ? &quot;\&lt;PageDown&gt;\&lt;C-p&gt;\&lt;C-n&gt;&quot; : &quot;\&lt;PageDown&gt;&quot;
+inoremap &lt;expr&gt; &lt;PageUp&gt;   pumvisible() ? &quot;\&lt;PageUp&gt;\&lt;C-p&gt;\&lt;C-n&gt;&quot; : &quot;\&lt;PageUp&gt;&quot;
+&quot; 跳转到定义处
+nnoremap &lt;leader&gt;jd :YcmCompleter GoToDefinitionElseDeclaration&lt;CR&gt;
+nnoremap &lt;F6&gt; :YcmForceCompileAndDiagnostics&lt;CR&gt;	&quot;force recomile with syntastic
+&quot; nnoremap &lt;leader&gt;lo :lopen&lt;CR&gt;	&quot;open locationlist
+&quot; nnoremap &lt;leader&gt;lc :lclose&lt;CR&gt;	&quot;close locationlist
+inoremap &lt;leader&gt;&lt;leader&gt; &lt;C-x&gt;&lt;C-o&gt;
+let g:ycm_global_ycm_extra_conf = '~/.vim/data/ycm/.ycm_extra_conf.py'
+&quot; 不显示开启vim时检查ycm_extra_conf文件的信息  
+let g:ycm_confirm_extra_conf=0
+&quot; 开启基于tag的补全，可以在这之后添加需要的标签路径  
+let g:ycm_collect_identifiers_from_tags_files=1
+&quot;注释和字符串中的文字也会被收入补全
+let g:ycm_collect_identifiers_from_comments_and_strings = 0
+&quot; 输入第2个字符开始补全
+let g:ycm_min_num_of_chars_for_completion=2
+&quot; 禁止缓存匹配项,每次都重新生成匹配项
+let g:ycm_cache_omnifunc=0
+&quot; 开启语义补全
+let g:ycm_seed_identifiers_with_syntax=1	
+&quot;在注释输入中也能补全
+let g:ycm_complete_in_comments = 1
+&quot;在字符串输入中也能补全
+let g:ycm_complete_in_strings = 1
+&quot; 设置在下面几种格式的文件上屏蔽ycm
+let g:ycm_filetype_blacklist = {
+      \ 'tagbar' : 1,
+      \ 'nerdtree' : 1,
+      \}
+&quot;youcompleteme  默认tab  s-tab 和 ultisnips 冲突
+let g:ycm_key_list_select_completion = ['&lt;Down&gt;']
+let g:ycm_key_list_previous_completion = ['&lt;Up&gt;']
+&quot; 修改对C函数的补全快捷键，默认是CTRL + space，修改为ALT + ;
+let g:ycm_key_invoke_completion = '&lt;M-;&gt;'
+&quot; SirVer/ultisnips 代码片断
+&quot; Trigger configuration. Do not use &lt;tab&gt; if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger=&quot;&lt;tab&gt;&quot;
+let g:UltiSnipsJumpForwardTrigger=&quot;&lt;tab&gt;&quot;
+let g:UltiSnipsJumpBackwardTrigger=&quot;&lt;s-tab&gt;&quot;
+let g:UltiSnipsListSnippets=&quot;&lt;c-e&gt;&quot;
+&quot;定义存放代码片段的文件夹，使用自定义和默认的，将会的到全局，有冲突的会提示
+let g:UltiSnipsSnippetDirectories=[&quot;bundle/vim-snippets/UltiSnips&quot;]
+&quot; 参考https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-62941322
+&quot; 解决ultisnips和ycm tab冲突，如果不使用下面的办法解决可以参考
+&quot; https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-63205056的配置
+&quot; begin
+&quot; let g:ycm_key_list_select_completion=['&lt;C-n&gt;', '&lt;Down&gt;']
+&quot; let g:ycm_key_list_previous_completion=['&lt;C-p&gt;', '&lt;Up&gt;']
+&quot; let g:UltiSnipsExpandTrigger=&quot;&lt;Tab&gt;&quot;
+&quot; let g:UltiSnipsJumpForwardTrigger=&quot;&lt;Tab&gt;&quot;                                           
+&quot; let g:UltiSnipsJumpBackwardTrigger=&quot;&lt;S-Tab&gt;&quot;
+&quot; end
+&quot; UltiSnips completion function that tries to expand a snippet. If there's no
+&quot; snippet for expanding, it checks for completion window and if it's
+&quot; shown, selects first element. If there's no completion window it tries to
+&quot; jump to next placeholder. If there's no placeholder it just returns TAB key 
+function! g:UltiSnips_Complete()
+    call UltiSnips#ExpandSnippet()
+    if g:ulti_expand_res == 0
+        if pumvisible()
+            return &quot;\&lt;C-n&gt;&quot;
+        else
+            call UltiSnips#JumpForwards()
+            if g:ulti_jump_forwards_res == 0
+               return &quot;\&lt;TAB&gt;&quot;
+            endif
+        endif
+    endif
+    return &quot;&quot;
+endfunction
+au BufEnter * exec &quot;inoremap &lt;silent&gt; &quot; . g:UltiSnipsExpandTrigger . &quot; &lt;C-R&gt;=g:UltiSnips_Complete()&lt;cr&gt;&quot;
+&quot; Expand snippet or return
+let g:ulti_expand_res = 1
+function! Ulti_ExpandOrEnter()
+    call UltiSnips#ExpandSnippet()
+    if g:ulti_expand_res
+        return ''
+    else
+        return &quot;\&lt;return&gt;&quot;
+endfunction
+&quot; Set &lt;space&gt; as primary trigger
+inoremap &lt;return&gt; &lt;C-R&gt;=Ulti_ExpandOrEnter()&lt;CR&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br></div></div><h2 id="ycm-eclim"><a href="#ycm-eclim" class="header-anchor">#</a> YCM &amp; Eclim</h2> <p>YCM配合Eclim可以实现对Java代码的自动提示，首先需要下载Eclim，下载好后执行java -jar eclim_2.4.1.jar，卸载的话，后面再加个参数uninstaller就行。按提示一步步安装就好了，安装好后首先要启动eclimd，它存放在eclipse的根目录下。</p> <p>对不同的自动补全插件eclim都提供了配置方法，对于YCM我们只需要在vimrc中添加一行let g:EclimCompletionMethod = 'omnifunc'就可以了。</p> <p>打开vim执行:ProjectCreate /path/to/project -n java创建一个新的工程。这个工程的结构和eclipse类似。:ProjectList命令可以查看工程列表。</p> <p>这个插件很有意思，可以在eclipse中嵌入vim，又可以在vim中享受eclipse一样的自动补全。对于Java来说，提供了一些以Java，Project，New，Mvn为前缀的命名。可以输入:Java按Tab键尝试一下。不过，我觉得还是使用eclipse配合viPlugin插件更方便些。</p> <h2 id="针对-ycm-extra-conf-py的配置："><a href="#针对-ycm-extra-conf-py的配置：" class="header-anchor">#</a> 针对.ycm_extra_conf.py的配置：</h2> <p>（1）百度贴吧上看到的一个网友写的<a href="https://github.com/robturtle/newycm_extra_conf.py" target="_blank" rel="noopener noreferrer">自动生成conf文件的脚本<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>
+（2）<a href="http://jesrui.sdf-eu.org/ycm-config-for-qt5.html" target="_blank" rel="noopener noreferrer">针对Qt5的补全的conf<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>
+都是别人写的，可以弄下来，针对自己的情况做些修改，保存在Templates文件夹里面，下次需要的话创建一个就很方便。</p> <h1 id="vim编译安装（ubuntu12-04）-list"><a href="#vim编译安装（ubuntu12-04）-list" class="header-anchor">#</a> vim编译安装（Ubuntu12.04）[^list]</h1> <p>下载、编译、安装命令如下：</p> <p>$ git clone https://github.com/vim/vim.git
+$ cd vim/src
+<code>$ ./configure --enable-pythoninterp=yes</code>
+$ make
+$ sudo make installvim
+　　敲入 vim 命令可以看到如下画面：
+<img src="http://img.blog.csdn.net/20170805182412041?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbHVfZW1iZWRkZWQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p> <p>需要注意的是，这里的 ./configure --enable-pythoninterp=yes 配置是必要的，表示开启 Vim 的 Python2 支持。如果想开启 Python3 支持，则参数应为 --enable-python3interp=yes。
+　　Vim 的默认安装路径是 /usr/local/bin/vim，原来的 Vim 是 /usr/bin/vim，所以 Vim 8.0 和 Vim 7.3 是可以共用的。那为什么输入 vim 执行的是 8.0 版本的而不是 7.3 版本的呢？看看环境变量 PATH 就知道了，因为 /usr/local/bin 的路径在前面嘛！</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ echo $PATH
+/sbin:/usr/sbin:/usr/lib/lightdm/lightdm:/usr/local/bin:/usr/bin:/bin
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>所以现在的 vim 执行的是 8.0 版本，而 vi 执行的是 7.3 版本。
+　　另外，我们可以通过如下命令来检查 vim 是否已经支持 Python。没有执行./configure --enable-pythoninterp=yes 编译的话是这样的：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ vim --version | grep python
++cryptv          +linebreak       +python          +viminfo
++cscope          +lispindent      -python3         +vreplace
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>而执行./configure --enable-pythoninterp=yes 之后编译的话是这样的：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ vim --version | grep python
++cryptv          +linebreak       +python          +viminfo
++cscope          +lispindent      -python3         +vreplace
+Linking: gcc   -L/usr/local/lib -Wl,--as-needed -o vim   -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lglib-2.0   -lSM -lICE -lXt -lX11 -lXdmcp -lSM -lICE  -lm -ltinfo -lnsl   -ldl    -L/usr/lib/python2.7/config -lpython2.7 -lpthread -ldl -lutil -lm -Xlinker -export-dynamic -Wl,-O1 -Wl,-Bsymbolic-functions
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h1 id="vimscript编写-list"><a href="#vimscript编写-list" class="header-anchor">#</a> vimscript编写[^list]</h1> <p>##文件与目录操作</p> <blockquote><p>http://www.jb51.net/article/97766.htm</p></blockquote> <p>文件名修饰符的解释
+:help expand()
+或者:h ::p 也行</p> <p>echo expand(&quot;%:r&quot;)	提取文件名而不要扩展名
+获取文件扩展名把 :r 换成 :e，具体看expand帮助</p> <ul><li><p>当前文件名
+我们知道Vim有48个寄存器，其中%只读寄存器中保存着当前文件路径。 例如在/home/harttle/下打开src/main.cpp，我们打印%的值：
+:echo @%    &quot; 文件路径 src/main.cpp</p></li> <li><p>通过关键字展开可得到绝对路径、所在目录等信息：
+:echo expand('%:t')  &quot; 文件名  main.cpp
+:echo expand('%:p')  &quot; 绝对路径 /home/harttle/src/main.cpp
+:echo expand('%:p:h') &quot; 所在目录 /home/harttle/src
+:echo expand('%:p:h:t') &quot; 所在目录名 src
+:p理解为path, :h理解为head, :t理解为tail。可参考:help expand。</p></li> <li><p>利用 % 进行文件操作
+备份当前文件main.cpp到main.cpp.bak:
+:w % %.bak
+打开在同目录下的main.h：
+:e %:p:h/main.h
+插入当前文件名：
+&quot;%p
+拷贝当前文件名到剪切板，当然你可以把它做成快捷键：
+:let @*=expand(&quot;%:t&quot;)</p></li> <li><p>直接打开目录
+Harttle发现Vim不仅可以打开文件，而且可以打开目录。 直接vim /home/harttle即可打开，也可以在vim打开目录：
+:e ./harttle &quot; 编辑该目录
+:Explore .  &quot; 浏览该目录
+:Sexplore .  &quot; 在水平分割窗口中浏览该目录
+:Vexplore .  &quot; 在垂直分割窗口中浏览该目录
+打开目录后Enter进入下一层，-返回上一层，R重命名，D删除。
+这里的水平分割是指上下两个窗口，垂直分割为左右两个窗口。 貌似TMUX和VIM对水平和垂直的定义恰恰相反，Harttle也是醉了。</p></li> <li><p>万能方法
+如果你找不到合适的Vim命令，随时都可以在Vim中直接执行Bash命令。 只需要在Ex模式中添加前导的!字符
+此外，NERDTree插件可以在Vim中显示文件目录树。 当然也集成了文件和目录操作，需要熟悉其快捷键。</p></li></ul></Space></Ctrl></div></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/gocifer/GLog/edit/master/docs/GTech：Linux基础/10.Linux FAQ/vim 扩展.md" target="_blank" rel="noopener noreferrer">编辑</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2020/07/31, 11:07:00</span></div></div> <div class="page-nav-wapper"><!----> <!----></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/GTech%EF%BC%9ALinux%E5%9F%BA%E7%A1%80/04.%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%9D%82%E8%B0%88/07.Linux-4.4-x86_64%20%E5%86%85%E6%A0%B8%E9%85%8D%E7%BD%AE/"><div></div></a> <span></span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/9b58a3/"><div>index</div></a> <span>07-30</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/98238b/"><div>基本命令</div></a> <span>07-30</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div> </main></div> <div class="footer"><div class="icons"><a href="mailto:blinderjay@qq.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/gocifer" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/#/playlist?id=755597173" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+     | Copyright © 2020-2020
+    <span>gocifer | <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE" target="_blank">MIT License</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----></div><div class="global-ui"><!----><div></div></div></div>
+    <script src="/assets/js/app.5bb0b44e.js" defer></script><script src="/assets/js/2.717babc4.js" defer></script><script src="/assets/js/63.8c76681d.js" defer></script>
+  </body>
+</html>
